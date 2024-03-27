@@ -58,6 +58,22 @@ To start, let's look at the function \texttt{load\_csv\_in\_sklearn\_format} wit
 \begin{enumerate}
 
 \item[a)] Argue whether unit tests are needed for this function. If so, which cases should be intercepted and how?
+	\begin{itemize}
+		\item
+Yes. you need multiple test to validate the integrity and format of the data, otherwise you will get error messages when working with the data later on or in the worst case the data is missinterpreted by the program (f.ex. gender is interpreted as a continous variable) resulting in illegal mathematical operations. Also you should do error handling for special cases like missing values or incorrect file paths to allow quick problem understanding and fixing.  You can use the unittest framework to perform muliple testcases.
+		\item
+Data Integrity: Ensures that the function accurately interprets and converts data into the required format without loss or corruption.
+Format Compliance: Confirms that the data structure conforms precisely to the expected format for compatibility with Scikit-learn's requirements.
+Error Handling: Validates the function's ability to handle various edge cases, such as missing values, corrupt data, or incorrect file paths, gracefully.
+		\item
+		- Datei nicht gefunden
+		-Datei ist leer
+		-Datei hat header (ist schon enthalten)
+		- Datei hat nan
+		- Datei hat nicht richtige Anzahl spalten
+		- entferne ob beide Spalten 100 Werte haben, checke ob beide gleich viel Werte haben (außer es ist wirklich wichtig dass es genau 100 Werte sind)
+		- Check the delimiter
+	\end{itemize}
 
 \item[b)] Add required unit tests.
 
