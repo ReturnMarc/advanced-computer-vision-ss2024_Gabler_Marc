@@ -1,7 +1,11 @@
+\documentclass{article}
+
 \def\firstname{Marc}
 \def\lastname{Gabler}
 \def\aufgabenblatt{1}
-\include{../common/header.tex}
+
+
+\input{../common/header.tex}
 
 \begin{document}
 
@@ -88,10 +92,23 @@ Now load the file \texttt{linear\_dataset\_100.csv}. Implement a linear regressi
 \begin{enumerate}
 
 \item[a)] Argue whether unit tests are required for this function. If yes: how could these be designed? If no: how could we make sure that the code works correctly?
+\begin{itemize}
+	\item You should evaluate the function based on statistical parameters like the r2 score, which is a measure of how well the model fits the data. You can also use the mean squared error to evaluate the model.
+	\item You can also use the visual inspection of the data to evaluate the model.
+	\item You dont have to test for overfitting, because the model is linear and can't overfit.
+\end{itemize}
 
-\item[b)] Is the fit perfect or not? Why is that? 
+\item[b)] Is the fit perfect or not? Why is that?
+\begin{itemize}
+	\item The fit is perfect because the data is linear and the model is linear. A r2 score of 1 indicates a perfect fit. We are close to that.
+\end{itemize}
 
 \item[c)] Now calculate the r\_2 score to determine the fit quantitatively. Argue the advantages and disadvantages of determining the fit optically or numerically.
+\begin{itemize}
+	\item The advantage of the r2 score is that it is a standardized measure that can be used to compare different models.
+	\item The disadvantage is that it only is useful for linear models and can't be used for non-linear models.
+	\item The advantage of the visual inspection is that it can be used for a variety of models, but it is subjective and can't be used to compare different models.
+\end{itemize}
 
 \includegraphics[width=0.45\textwidth]{source_code/goodfit_linear_model.png}
 \includegraphics[width=0.45\textwidth]{source_code/goodfit_linear_testdata.png}
@@ -107,8 +124,16 @@ Now repeat the process (load the file, fit, visualize, calculate r2\_score) with
 \begin{enumerate}
 
 \item[a)] Is the fit good or not? Why is that? 
+\begin{itemize}
+	\item The fit is not good because the data is not linear and the model is linear. The model can't fit the data well. (Underfit)
+\end{itemize}
 
 \item[b)] Now calculate the r\_2 score to determine the fit quantitatively. Argue how you could determine a cut-off value to determine whether a linear model is sufficient or not.
+\begin{itemize}
+	\item r2 score of 0.5 indicates medium correlation, r2 score of 0.7 indicates strong correlation. You could use these values as a cut-off value.
+	\item another way would be to compare a linear and non-linear model and see which one fits the test data better.
+\end{itemize}
+
 
 \includegraphics[width=0.45\textwidth]{source_code/underfit_linear_model.png}
 \includegraphics[width=0.45\textwidth]{source_code/underfit_linear_testdata.png}
@@ -127,9 +152,15 @@ Use the PolynomialFeatures class from sklearn.preprocessing to create polynomial
 
 \begin{enumerate}
 
-\item[a)] Is the fit good or not? Why? 
+\item[a)] Is the fit good or not? Why?
+\begin{itemize}
+	\item Good fit, because high r2 score. Model capacity now sufficent for data.
+\end{itemize}
 
 \item[b)] Now calculate the r\_2 score to determine the fit quantitatively. Argue how you could determine a cut-off value to determine whether a linear model is sufficient or not.
+\begin{itemize}
+	\item see answer before
+\end{itemize}
 
 \includegraphics[width=0.45\textwidth]{source_code/goodfit_polynomial_model.png}
 \includegraphics[width=0.45\textwidth]{source_code/goodfit_polynomial_testdata.png}
@@ -148,11 +179,20 @@ Now we use a spline model (piecewise polynomial). To do this, we construct a spl
 
 \item[a)] Implement the regression.
 
-\item[b)] Is the fit good or not? Why? 
+\item[b)] Is the fit good or not? Why?
+\begin{itemize}
+	\item The fit is not good because the model is overfitting the data. The model is too complex for the data.
+\end{itemize} 
 
 \item[c)] Now calculate the r\_2 score to determine the fit quantitatively.
+\begin{itemize}
+	\item the r2 score is ok, its sometimes difficult to detect overfitting via the r2 score.
+\end{itemize}
 
 \item[d)] How does the fit change if you use splines of higher degree (3 or 5)? Does the result get better or worse? Why?
+\begin{itemize}
+	\item The fit gets worse because the model is overfitting the data more. The model is too complex for the data.
+\end{itemize}
 
 \includegraphics[width=0.45\textwidth]{source_code/overfit_spline_model.png}
 \includegraphics[width=0.45\textwidth]{source_code/overfit_spline_testdata.png}
