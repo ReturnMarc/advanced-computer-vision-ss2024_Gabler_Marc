@@ -1,7 +1,7 @@
 \documentclass{article}
 
-\def\firstname{Tim}
-\def\lastname{Dahmen}
+\def\firstname{Marc}
+\def\lastname{Gabler}
 \def\aufgabenblatt{2}
 \input{../common/header.tex}
 
@@ -30,7 +30,11 @@ We need two auxiliary functions: \texttt{count\_occurance\_of\_class} and \textt
 \begin{enumerate}
 
 \item[a)] Argue whether unit tests are required for this function. Which cases should be tested?
-
+\begin{itemize}
+    \item In our use case these two auxilar functions get called after lots of other functions are already called beforehand.
+    All test regarding data format, integrity and should be done by now, probably by the \texttt{load\_csv\_in\_sklearn} function. For this reason no test cases to implement regaring the input.
+    There could be made an argument that the output should be tested, but I think this is not necessary as the functions are very simple. One also has to consider the overhead, ressource constraint.
+\end{itemize}
 \item[b)] Add the required unit tests.
 
 \item[c)] Implement the functions.
@@ -46,6 +50,11 @@ Next, we need a function that calculates the Gini index for a data set in the ab
 \begin{enumerate}
 
 \item[a)] Argue whether unit tests are needed for this function. Which cases should be tested?
+\begin{itemize}
+    \item I think unit tests for checking the correctness of the formula are necessary. Errors in the definition of formulas can happen quickly, as no error will be raised if the formula is codewise correct but mathematically wrong leading to false conclusions in the decision for decision boundaries.
+    Also the Gini-Index is not always intuitive, so wrong results can be hard to spot. 
+    \item Test the edge cases: all same class, all different classes. Also a third case with a mix of classes can be implemented.
+\end{itemize}
 
 \item[b)] Add the required unit tests.
 
@@ -63,6 +72,10 @@ is to be split and a split value. It returns a tuple $(left, right)$. Here, $lef
 \begin{enumerate}
 
 \item[a)] Argue whether unit tests are needed for this function. Which cases should be tested?
+\begin{itemize}
+    \item In our use case these two auxilar functions get called after lots of other functions are already called beforehand.
+    All test regarding data format, integrity and should be done by now. The function is simple. I wouldnt create testcases for the same reason as in the first task.
+\end{itemize}
 
 \item[b)] Add the required unit tests.
 
@@ -82,6 +95,14 @@ features of the best split, and value is the threshold value from which the spli
 \begin{enumerate}
 
 \item[a)] Argue whether unit tests are needed for this function. Which cases should be tested?
+\begin{itemize}
+    \item In our use case these two auxilar functions get called after lots of other functions are already called beforehand.
+    All test regarding data format, integrity and should be done by now, especially the function testing if the recursion in the decision tree can be stopped is important to handle edge cases that shouldnt go into this function.
+    Examples are datasets containing only one value or all feature values being the same. These functionality of \texttt{select\_best\_split} can be tested with the following edge case:
+    \begin{itemize}
+        \item All values of first but not the second feature are the same
+    \end{itemize}
+\end{itemize}
 
 \item[b)] Add the required unit tests.
 
@@ -90,6 +111,10 @@ features of the best split, and value is the threshold value from which the spli
 \item[d)] Optional: Implement the optimization that a split is evaluated based on a sample of the data set. Determine experimentally from what size of data set this is faster.
 
 \item[e)] Optional: Argue in which cases it could be useful to split at points other than the median of the values. Implement an additional split strategy.
+\begin{itemize}
+    \item You could also split at the mean of the values. This could be useful if the data is not evenly distributed. For example a lot of points in Class A all haave the value 1 and only one Value of Class B exists and has
+    the value 10. The median would be 1, but the mean would be higher. This could be a better split.
+\end{itemize}
 
 \end{enumerate}
 
@@ -101,7 +126,15 @@ With the help of the auxiliary functions already implemented, we can now build a
 
 \begin{enumerate}
 
-\item[a)] Argue whether unit tests are required for this function. Which cases should be tested? What role can visualizations play? 
+\item[a)] Argue whether unit tests are required for this function. Which cases should be tested? What role can visualizations play?
+\begin{itemize}
+    \item Visualizations allow an intuitive understanding of the decision tree. They can be used to check if the tree is built correctly, and let the user understand the decision making. This testing would be qualitative and not quantitative.
+    \item The function should be tested for the following cases:
+    \begin{itemize}
+        \item Base case: The function should stop and return a LeafNode if the data set is empty or only contains one class, or all features have the same value. 
+        \item Recursive case: The base case is not fullfilled. Return InnerNode. It can also be checked if the children are correctly assigned as LeafNodes assuming the base case can be reached by a one iteration.
+    \end{itemize}
+\end{itemize}
 
 \item[b)] Add the required unit tests.
 
