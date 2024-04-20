@@ -1,7 +1,9 @@
-\def\firstname{Tim}
-\def\lastname{Dahmen}
+\documentclass{article}
+
+\def\firstname{Marc}
+\def\lastname{Gabler}
 \def\aufgabenblatt{3}
-\include{../common/header.tex}
+\input{../common/header.tex}
 
 \begin{document}
 
@@ -23,12 +25,19 @@ Out first step is to implement the data loading mechanism.
 \begin{enumerate}
 
 \item[a)] Argue if Unit Tests are required for an implementation of the functions.
+\begin{itemize}
+    \item \texttt{extract\_numpy\_from\_df}: Test if the function returns the correct array for different positions of input and output columns.
+    \item \texttt{clean\_data}: Test if there are still a sufficient amount of data points left after the function has been called.
+\end{itemize}
 
 \item[b)] Implement the functions as Python code.
 
 \item[c)] Implement the functions above. 
 
-\item[d)] Consider the clean data function. What happens of the data contains many defective rows, or defective columns? Make an argument, to what extend the clean data should silently handle corrections, when it should adapt, or when it should fail. 
+\item[d)] Consider the clean data function. What happens of the data contains many defective rows, or defective columns? Make an argument, to what extend the clean data should silently handle corrections, when it should adapt, or when it should fail.
+\begin{itemize}
+    \item If the data contains many defective rows, the function should fail, because the data is not usable. You can handle this by checking the amount of nan values in the data and if it is above a certain threshold, the function should raise an error.
+\end{itemize}
 
 \end{enumerate}
 
@@ -44,6 +53,11 @@ I needed the following time to complete the task:
 \begin{enumerate}
 
 \item[a)] Argue what Tests are required for an implementation of the functions. 
+\begin{itemize}
+    \item \texttt{normalize}: Test normalization on an array where all elements are the same
+    \item \texttt{normalize}: Test if the function normalizes the array correctly
+    \item \texttt{hot\_1\_encode}: Test if the function returns the correct array for different values of the input array
+\end{itemize}
 
 \item[b)] Implement the tests.
 
@@ -64,7 +78,11 @@ In the following, we will prepare the data for training:
 
 \begin{enumerate}
 
-\item[a)] Argue what Tests are required for an implementation of the functions. 
+\item[a)] Argue what Tests are required for an implementation of the functions.
+\begin{itemize}
+    \item \texttt{split\_data}: Test if the function returns the correct amount of data points for training and validation and test if there are no duplicates in the data
+    \item \texttt{mini\_batch}: Test if the function works as expected on a small dataset
+\end{itemize} 
 
 \item[b)] Implement the tests.
 
