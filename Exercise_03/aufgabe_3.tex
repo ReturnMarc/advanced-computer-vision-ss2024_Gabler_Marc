@@ -117,11 +117,17 @@ Now, we experimentally determine optimal training parameters. You will need to o
 \begin{enumerate}
 
 \item[a)] Find an optimal learning rate. Argue which rates you tested and how you determined an optimal value.
-
+\begin{itemize}
+    \item I tested learning rates from 0.1 to 0.0001 in logaritmic steps.
+\end{itemize}
 \item[b)] Find an optimal learning batch size. Argue which batch sizes you tested and how you determined an optimal value.
-
+\begin{itemize}
+    \item I tested batch sizes from 32 to 124 in steps of x2 the previous value.
+\end{itemize}
 \item[b)] Find an optimal network architecture (number of layers and nuber of features for each layer). Argue which architectures you tested and how you determined an optimal setup.
-
+\begin{itemize}
+    \item I tested a very simple architecture with 2 layers and few nodes, medium complexity with 2 layers and more nodes, and 3 layers and lots of nodes
+\end{itemize}
 \end{enumerate}
 
 I needed the following time to complete the task:
@@ -133,11 +139,15 @@ Finally, we will adapt the source code to work with the Iris dataset that we use
 \begin{enumerate}
 
 \item[a)] Analyse, which parts of your source code will need to changed. Describe in your own words an implementation plan for the adaptation.
-
+\begin{itemize}
+    \item I have to load another dataset, and decrease batch size, the rest stays the same. i test less hyperpar to reduce training time.
+\end{itemize}
 \item[b)] Make the necessary adaptations and solve the classification problem on the Iris dataset.
 
 \item[c)] Make a comparative study to compare the performance of the neural network with your decision tree. How do they compare for the MECS dataset and for the Iris dataset?
-
+\begin{itemize}
+    \item The neural network is much more flexible and can learn more complex patterns. The decision tree is faster to train and easier to interpret.
+\end{itemize}
 \end{enumerate}
 
 I needed the following time to complete the task:
