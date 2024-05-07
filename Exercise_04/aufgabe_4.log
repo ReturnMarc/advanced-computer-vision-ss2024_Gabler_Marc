@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.28)  6 MAY 2024 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.28)  6 MAY 2024 19:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -307,14 +307,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Marc\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Overfull \hbox (8.67467pt too wide) in paragraph at lines 46--47
+Overfull \hbox (8.67467pt too wide) in paragraph at lines 57--58
 []\OT1/cmr/m/n/10 Apply the iso-con-tours al-go-rithm to ex-tract the con-tours from the image in the fi-le \OT1/cmtt/m/n/10 shapes[]binary.png\OT1/cmr/m/n/10 .
  []
 
 <../common/hs_aalen_de.png, id=1, 845.0772pt x 142.8537pt>
 File: ../common/hs_aalen_de.png Graphic file (type png)
 <use ../common/hs_aalen_de.png>
-Package pdftex.def Info: ../common/hs_aalen_de.png  used on input line 80.
+Package pdftex.def Info: ../common/hs_aalen_de.png  used on input line 87.
 (pdftex.def)             Requested size: 113.81102pt x 19.23863pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -328,7 +328,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  <../common/hs_aalen_de.png>]
 File: ../common/hs_aalen_de.png Graphic file (type png)
 <use ../common/hs_aalen_de.png>
-Package pdftex.def Info: ../common/hs_aalen_de.png  used on input line 89.
+Package pdftex.def Info: ../common/hs_aalen_de.png  used on input line 100.
 (pdftex.def)             Requested size: 113.81102pt x 19.23863pt.
 
 
@@ -345,17 +345,17 @@ L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5109 strings out of 474423
- 81396 string characters out of 5742190
- 1936496 words of memory out of 5000000
- 27408 multiletter control sequences out of 15000+600000
- 559447 words of font info for 41 fonts, out of 8000000 for 9000
+ 5114 strings out of 474423
+ 81490 string characters out of 5742190
+ 1937496 words of memory out of 5000000
+ 27412 multiletter control sequences out of 15000+600000
+ 559782 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,73p,400b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Marc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on aufgabe_4.pdf (2 pages, 124319 bytes).
+ 62i,15n,73p,400b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Marc\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Marc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on aufgabe_4.pdf (2 pages, 125848 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

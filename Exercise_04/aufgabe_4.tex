@@ -20,6 +20,10 @@ We start by implementing the flood fill algorithm, an algorithm used to mark con
 \begin{enumerate}
 
 \item[a)] Describe your test strategy.
+\begin{itemize}
+    \item Test with different images, different seeds, different connectivity
+    \item Test edge-case of particle size 1, particle at border of image
+\end{itemize}
 
 \item[b)] Implement unittests for the floodfill algorithm.
 
@@ -28,6 +32,9 @@ We start by implementing the flood fill algorithm, an algorithm used to mark con
 \item[d)] Apply the floodfill algorithm to extract the particles in the file \texttt{shapes\_binary.png}. Results should be stored as pixel coordinates for each particle in a file called \texttt{particles.csv}.
 
 \item[e)] Visualize the detected particles. Do all results seem to be legitimate particles? If not, what is the reason and what can be done about it?
+\begin{itemize}
+    \item Yes, all results seem to be legitimate particles
+\end{itemize}
 
 \end{enumerate}
 
@@ -40,6 +47,10 @@ Next, we detect the particles using isocontours.
 \begin{enumerate}
 
 \item[a)] Describe your test strategy and implement unittests for the isocontours algorithm.
+\begin{itemize}
+    \item Test with different images, different isovalue, different connectivity
+    \item Test edge-case of particle size 1, particle at border of image
+\end{itemize}
 
 \item[b)] Implement an algorithm that extracts isocontours from binary images. 
 
